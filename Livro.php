@@ -1,6 +1,9 @@
 <?php
 
-    class Livro
+    require_once "Pessoa.php";
+    require_once 'Publicacao.php';
+
+    class Livro implements Publicacao
     {
         private $titulo;
         private $autor;
@@ -24,6 +27,52 @@
                 echo "Leitor: " . $this->getLeitor();
                 echo "Aberto: " . $this->getAberto();
             echo "</p>";
+        }
+
+        public function abrir()
+        {
+            echo "<p>";
+                echo "O Livro " . $this->getTitulo() . " do Autor " . $this->getAutor() . " está " . $this->getAberto();
+            echo "</p>";
+        }
+
+        public function fechar()
+        {
+            $this->aberto = false;
+            echo "<p>";
+                echo "O Livro " . $this->getTitulo() . " do Autor " . $this->getAutor() . " está " . $this->getAberto();
+            echo "</p>";
+        }
+
+        public function folhear()
+        {
+            echo "Está folheando o livro";
+        }
+
+        public function avancarPag()
+        {   
+            if($this->getAberto())
+            {
+                echo "Página Atual: " . $this->getPagAtual();
+                echo "Avançar 1 pagina";
+                $this->setPagAtual($this->getPagAtual() + 1);
+                echo "A Página está " . $this->getPagAtual(); 
+            }
+            else
+            {
+                echo "O Livro não está aberto";
+            }
+        }
+
+        public function voltarPag()
+        {
+            if($this->getAberto())
+            {
+                echo "Pagina Atual: " . $this->getPagAtual();
+                echo "Voltar 1 pagina";
+                $this->setPagAtual($this->getPagAtual() - 1);
+                echo "A Página está " . $this->getPagAtual(); 
+            }
         }
 
         // Métodos Get e Set
