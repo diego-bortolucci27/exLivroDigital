@@ -11,5 +11,16 @@
 
 
     $livro1 = new Livro();
+    $livro1->setTitulo("Senhor dos Anéis: A Sociedade do Anel");
+    $livro1->setAutor("J.R.R Tokien");
+    $livro1->setPag(576);
+    $livro1->setPagAtual(1);
+    $livro1->setAberto(true);
+    $livro1->setLeitor($this->getNome());
 
+    $livro1->fechar();
+    $livro1->abrir();
+    $livro1->folhear();
+    $livro1->avancarPag();
+    $livro1->voltarPag();
 ?>
