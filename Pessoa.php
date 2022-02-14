@@ -8,7 +8,10 @@
 
         public function fazerAniver()
         {
+            echo $this->getNome() . " está fazendo aniversário";
             $this->setIdade($this->getIdade + 1);
+            echo "Sexo: " . $this->getSexo();
+            echo "Idade: " . $this->getIdade() . " anos";
         }
 
         // Metodos Especiais

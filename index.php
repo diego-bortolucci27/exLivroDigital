@@ -8,6 +8,7 @@
     $pessoa1->setNome("Diego Bortolucci");
     $pessoa1->setIdade(19);
     $pessoa1->setSexo("Masculino");
+    $pessoa1->fazerAniver();
 
 
     $livro1 = new Livro();
