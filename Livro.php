@@ -17,14 +17,14 @@
             $this->aberto = true;
         }
 
-        public function detalhes()
+        public function detalhes($pessoa)
         {
             echo "<p>";
                 echo "Livro: " . $this->getTitulo();
                 echo "Autor: " . $this->getAutor();
                 echo "Paginas: " . $this->getPag();
                 echo "Pagina Atual: " . $this->getPagAtual();
-                echo "Leitor: " . $this->getLeitor();
+                echo "Leitor: " . $pessoa->getNome();
                 echo "Aberto: " . $this->getAberto();
             echo "</p>";
         }
