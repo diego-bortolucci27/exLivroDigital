@@ -14,7 +14,7 @@
 
         public function __construct($titulo, $autor, $leitor, $pag)
         {
-            $this->setAberto(true);
+            $this->setAberto(false);
             $this->setTitulo($titulo);
             $this->setAutor($autor);
             $this->setLeitor($leitor);
@@ -30,7 +30,7 @@
                 echo "Autor: " . $this->getAutor() . "<br>";
                 echo "Paginas: " . $this->getPag() . "<br>";
                 echo "Pagina Atual: " . $this->getPagAtual() . "<br>";
-                echo "Leitor: " . $this->getLeitor() . "<br>";
+                echo "Leitor: " . $this->getLeitor()->getNome() . "<br>";
                 echo "Aberto: " . $this->getAberto() . "<br>";
             echo "</p>";
         }
