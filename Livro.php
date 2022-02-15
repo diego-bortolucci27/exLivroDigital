@@ -12,9 +12,13 @@
         private $aberto;
         private $leitor;
 
-        public function __construct()
+        public function __construct($titulo, $autor, $leitor, $pag)
         {
             $this->setAberto(true);
+            $this->setTitulo($titulo);
+            $this->setAutor($autor);
+            $this->setLeitor($leitor);
+            $this->setPag($pag);
             $this->setPagAtual(1);
         }
 
