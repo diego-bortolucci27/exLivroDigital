@@ -17,22 +17,23 @@
             $this->aberto = true;
         }
 
-        public function detalhes($pessoa)
+        public function detalhes()
         {
             echo "<p>";
-                echo "Livro: " . $this->getTitulo();
-                echo "Autor: " . $this->getAutor();
-                echo "Paginas: " . $this->getPag();
-                echo "Pagina Atual: " . $this->getPagAtual();
-                echo "Leitor: " . $pessoa->getNome();
-                echo "Aberto: " . $this->getAberto();
+                echo "<h2> Detalhes </h2>";
+                echo "Livro: " . $this->getTitulo() . "<br>";
+                echo "Autor: " . $this->getAutor() . "<br>";
+                echo "Paginas: " . $this->getPag() . "<br>";
+                echo "Pagina Atual: " . $this->getPagAtual() . "<br>";
+                echo "Leitor: " . $this->getLeitor() . "<br>";
+                echo "Aberto: " . $this->getAberto() . "<br>";
             echo "</p>";
         }
 
         public function abrir()
         {
             echo "<p>";
-                echo "O Livro " . $this->getTitulo() . " do Autor " . $this->getAutor() . " está " . $this->getAberto();
+                echo "O Livro " . $this->getTitulo() . " do Autor " . $this->getAutor() . " está aberto";
             echo "</p>";
         }
 
@@ -40,38 +41,42 @@
         {
             $this->aberto = false;
             echo "<p>";
-                echo "O Livro " . $this->getTitulo() . " do Autor " . $this->getAutor() . " está " . $this->getAberto();
+                echo "O Livro " . $this->getTitulo() . " do Autor " . $this->getAutor() . " está fechado";
             echo "</p>";
         }
 
         public function folhear()
         {
-            echo "Está folheando o livro";
+            echo "<p>Está folheando o livro</p>";
         }
 
         public function avancarPag()
         {   
             if($this->getAberto())
-            {
-                echo "Página Atual: " . $this->getPagAtual();
-                echo "Avançar 1 pagina";
-                $this->setPagAtual($this->getPagAtual() + 1);
-                echo "A Página está " . $this->getPagAtual(); 
+            {   
+                echo "<p>";
+                    echo "Página Atual: " . $this->getPagAtual() . "<br>";
+                    echo "Avançar 1 pagina " . "<br>";
+                    $this->setPagAtual($this->getPagAtual() + 1);
+                    echo "A Página está " . $this->getPagAtual();
+                echo "</p>";
             }
             else
             {
-                echo "O Livro não está aberto";
+                echo "<p>O Livro não está aberto</p>";
             }
         }
 
         public function voltarPag()
         {
             if($this->getAberto())
-            {
-                echo "Pagina Atual: " . $this->getPagAtual();
-                echo "Voltar 1 pagina";
-                $this->setPagAtual($this->getPagAtual() - 1);
-                echo "A Página está " . $this->getPagAtual(); 
+            {   
+                echo "<p>";
+                    echo "Pagina Atual: " . $this->getPagAtual() . "<br>";
+                    echo "Voltar 1 pagina " . "<br>";
+                    $this->setPagAtual($this->getPagAtual() - 1);
+                    echo "A Página está " . $this->getPagAtual(); 
+                echo "</p>";
             }
         }
 
@@ -109,32 +114,32 @@
 
         public function setTitulo($t)
         {
-            $this->nome = $t;
+            $this->titulo = $t;
         }
 
         public function setAutor($a)
         {
-            $this->idade = $a;
+            $this->autor = $a;
         }
 
         public function setPag($pg)
         {
-            $this->sexo = $pg;
+            $this->pag = $pg;
         }
 
-        public function setPagAtual($pgA)
+        public function setPagAtual($pga)
         {
-            $this->sexo = $pgA;
+            $this->pagAtual = $pga;
         }
 
         public function setAberto($a)
         {
-            $this->sexo = $a;
+            $this->aberto = $a;
         }
 
         public function setLeitor($l)
         {
-            $this->sexo = $l;
+            $this->leitor = $l;
         }
     }
 
