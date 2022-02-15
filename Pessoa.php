@@ -14,6 +14,13 @@
             echo "Idade: " . $this->getIdade() . " anos" . "<br>";
         }
 
+        public function __construct($nome, $idade, $sexo)
+        {
+            $this->setNome($nome);
+            $this->setIdade($idade);
+            $this->setSexo($sexo);
+        }
+
         // Metodos Especiais
 
         public function getNome()
