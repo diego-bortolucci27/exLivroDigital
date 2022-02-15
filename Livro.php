@@ -14,7 +14,8 @@
 
         public function __construct()
         {
-            $this->aberto = true;
+            $this->setAberto(true);
+            $this->setPagAtual(1);
         }
 
         public function detalhes()
@@ -31,7 +32,8 @@
         }
 
         public function abrir()
-        {
+        {   
+            $this->setAberto(true);
             echo "<p>";
                 echo "O Livro " . $this->getTitulo() . " do Autor " . $this->getAutor() . " está aberto";
             echo "</p>";
